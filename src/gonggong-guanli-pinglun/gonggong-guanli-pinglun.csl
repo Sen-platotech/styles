@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" initialize="true" initialize-with=" " page-range-format="expanded" default-locale="en-US" default-locale-sort="zh-CN" demote-non-dropping-particle="never">
+<?xml version='1.0' encoding='UTF-8'?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" initialize-with=" " page-range-format="expanded" default-locale="en-US" demote-non-dropping-particle="never">
   <info>
-    <title>&#x516C;&#x5171;&#x7BA1;&#x7406;&#x8BC4;&#x8BBA;</title>
-    <title-short>&#x516C;&#x7BA1;&#x8BC4;&#x8BBA;</title-short>
-    <id>https://zotero-chinese.com/styles/gonggong-guanli-pinglun</id>
-    <link href="https://zotero-chinese.com/styles/gonggong-guanli-pinglun" rel="self"/>
+    <title>公共管理评论 (Chinese)</title>
+    <title-short>公管评论</title-short>
+    <id>http://www.zotero.org/styles/gonggong-guanli-pinglun</id>
+    <link href="http://www.zotero.org/styles/gonggong-guanli-pinglun" rel="self"/>
     <link href="https://gogl.cbpt.cnki.net/" rel="documentation"/>
     <author>
       <name>Zhe Shen</name>
@@ -29,8 +29,8 @@
   <!-- Locale: Chinese -->
   <locale xml:lang="zh">
     <terms>
-      <term name="et-al">, &#x7B49;</term>
-      <term name="and">&#x548C;</term>
+      <term name="et-al">, 等</term>
+      <term name="and">和</term>
       <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
@@ -182,55 +182,6 @@
   </macro>
 
   <!-- ====== Full bibliography entry ====== -->
-  <macro name="entry">
-    <group delimiter=". ">
-      <!-- Author. Year. -->
-      <text macro="author-bib"/>
-      <text macro="year"/>
-      <!-- Title[Type] -->
-      <group>
-        <text macro="title"/>
-        <text macro="type-label"/>
-      </group>
-      <!-- Source details depending on type -->
-      <choose>
-        <if type="article-journal article-magazine" match="any">
-          <group delimiter=": ">
-            <text macro="container-journal"/>
-            <text macro="pages"/>
-          </group>
-        </if>
-        <else-if type="article-newspaper">
-          <text variable="container-title"/>
-        </else-if>
-        <else-if type="chapter">
-          <group>
-            <group>
-              <text macro="title"/>
-              <text macro="type-label"/>
-              <text macro="container-chapter"/>
-            </group>
-            <text macro="publisher" prefix=". "/>
-            <text macro="pages" prefix=", "/>
-          </group>
-        </else-if>
-        <else-if type="paper-conference">
-          <group>
-            <text macro="container-chapter"/>
-            <text macro="publisher" prefix=". "/>
-            <text macro="pages" prefix=", "/>
-          </group>
-        </else-if>
-        <else-if type="dataset post post-weblog software webpage" match="any">
-          <text macro="access"/>
-        </else-if>
-        <else>
-          <!-- Book, thesis, report, etc -->
-          <text macro="publisher"/>
-        </else>
-      </choose>
-    </group>
-  </macro>
 
   <!-- ====== Rebuild entry to avoid double title for chapters ====== -->
   <macro name="entry-journal">
@@ -333,28 +284,6 @@
       <key macro="author-bib"/>
       <key macro="year"/>
     </sort>
-    <layout suffix="." locale="zh">
-      <choose>
-        <if type="article-journal article-magazine" match="any">
-          <text macro="entry-journal"/>
-        </if>
-        <else-if type="chapter">
-          <text macro="entry-chapter"/>
-        </else-if>
-        <else-if type="paper-conference">
-          <text macro="entry-conference"/>
-        </else-if>
-        <else-if type="article-newspaper">
-          <text macro="entry-newspaper"/>
-        </else-if>
-        <else-if type="dataset post post-weblog software webpage" match="any">
-          <text macro="entry-web"/>
-        </else-if>
-        <else>
-          <text macro="entry-book"/>
-        </else>
-      </choose>
-    </layout>
     <layout suffix=".">
       <choose>
         <if type="article-journal article-magazine" match="any">
